@@ -13,7 +13,7 @@ import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
 
-@asyncConnect([{
+@asyncConnect([{ // eslint-disable-line
   promise: ({store: {dispatch, getState}}) => {
     const promises = [];
 
@@ -27,7 +27,7 @@ import { asyncConnect } from 'redux-async-connect';
     return Promise.all(promises);
   }
 }])
-@connect(
+@connect( // eslint-disable-line
   state => ({user: state.auth.user}),
   {logout, pushState: push})
 export default class App extends Component {
